@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+
+header {
+    background-color: #0b326e;
+    padding: 10px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+    margin-right: 20px;
+    color: #fff;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: #fff;
+    color: #0b326e;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.register-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.large-number {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #0b326e;
+    margin: 10px 0;
+}
+
+.block-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.grafico-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-description {
+    text-align: center;
+    font-size: 18px; 
+    color: #555;
+}
+
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0b326e;
+    color: #DDEBFD;
+}
+
+.social-media-icons {
+    margin-top: 10px;
+}
+
+.social-media-icons img {
+    width: 30px;
+    margin: 0 10px;
+    
+}
+
+/* Hover para los botones de cuenta */
+.boton-inicio:hover {
+    background-color: #042454;
+    color: white;
+}
+
+.boton-registro:hover {
+    background-color: white;
+    color: #042454
+}
+
+/* Estilo del dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Oculta el menú desplegable inicialmente */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo de los links dentro del menú desplegable */
+.dropdown-content li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambia el color de fondo al pasar el mouse sobre los links del menú */
+.dropdown-content li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Muestra el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

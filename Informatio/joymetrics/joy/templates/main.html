@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css_proyect/main.css' %}">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">N</div>
+            <ul class="menu">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Productos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{% url 'main' %}">JoyMetrics</a></li>
+                        <li><a href="#">SpeedGate</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'quienes' %}">Quiénes somos</a></li>
+            </ul>
+            <div class="right-section">
+                <div class="language">
+                    <span>ES</span>
+                    <div class = "user">
+                        <img src="{% static 'images/user.png' %}" alt="User">
+                    </div>    
+                    <span>Usuario123</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Analisis</a></li>
+            <li><a href="#">Resumen</a></li>
+            <li><a href="#">Escribenos</a></li>
+            <li><a href="#">Configuracion</a></li>
+            <li><a href="#">Cerrar sesion</a></li>
+        </ul>
+    </aside>
+
+        <section class="content">
+            <div class="row">
+                <h2>Factores considerados</h2>
+                <div class="factores">
+                    <div class="economico col-sm-6 col-md-4 col-lg-2" tabindex="1">
+                        <div class="title">Económico</div>
+                        <h1>promedio</h1>
+                        <h2>0.98</h2>
+                        <div class="description ">
+                            El ingreso promedio de las personas en un país, que refleja el nivel de vida y bienestar económico.                    </div>
+                    </div>
+                    <div class="familiar col-sm-6 col-md-4 col-lg-2" tabindex="2">
+                        <div class="title">Familiar</div>
+                        <h1>promedio</h1>
+                        <h2>1.19</h2>
+                        <div class="description">La calidad de las relaciones y el acceso a una red de apoyo, como familia y amigos.</div>
+                    </div>
+                    <div class="salud col-sm-6 col-md-4 col-lg-2" tabindex="3">
+                        <div class="title">Salud</div>
+                        <h1>promedio</h1>
+                        <h2>0.55</h2>
+                        <div class="description">La expectativa de vida en buen estado de salud, un indicador del bienestar físico.
+
+                        </div>
+                    </div>
+                    <div class="libertad col-sm-6 col-md-4 col-lg-2" tabindex="4">
+                        <div class="title">Libertad</div>
+                        <h1>promedio</h1>
+                        <h2>0.4</h2>
+                        <div class="description">La percepción de las personas sobre su capacidad para elegir y controlar su propia vida.</div>
+                    </div>
+                    <div class="corrupcion col-sm-6 col-md-4 col-lg-2" tabindex="5">
+                        <div class="title">Corrupción del Gobierno</div>
+                        <h1>promedio</h1>
+                        <h2>0.3</h2>
+                        <div class="description">Medida a través de actos de caridad y disposición a ayudar a otros.</div>
+                    </div>
+                    <div class="generosidad col-sm-6 col-md-4 col-lg-2" tabindex="6">
+                        <div class="title">Generosidad</div>
+                        <h1>promedio</h1>
+                        <h2>0.45</h2>
+                        <div class="description">La confianza en la honestidad de las instituciones gubernamentales y empresariales, lo que afecta la seguridad y el bienestar general.</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="graphs col-sm-6 col-md-6 col-lg-4">
+                        <div class="graph">
+                            <h5 class="block-title">Economia en Latinoamerica</h5>
+                            <canvas id="graficoEconomico"></canvas>
+                        </div>
+                        <div class="graph">
+                            <h5 class="block-title">Importancia de la familia para las potencias mundiales</h5>
+                            <canvas id="graficoFamiliar"></canvas>
+                        </div>
+                        <div class="graph">
+                            <h5 class="block-title">La salud en Europa</h5>
+                            <canvas id="graficoSalud"></canvas>
+                        </div>
+                        <div class="graph">
+                            <h5 class="block-title">Libertad en Africa</h5>
+                            <canvas id="graficoLibertad"></canvas>
+                        </div>
+                        <div class="graph">
+                            <h5 class="block-title">Como se siente la corrupccion en Latinoamerica</h5>
+                            <canvas id="graficoCorrupcion"></canvas>
+                        </div>
+                        <div class="graph">
+                            <h5 class="block-title">¿Que tan generosos son los Nordicos?</h5>
+                            <canvas id="graficoGenerosidad"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const configEconomico = {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Chile', 'Brazil', 'Argentina', 'Peru', 'Bolivia'],
+                        datasets: [{
+                            label: 'Factor económico',
+                            data: [0.9, 1.2, 0.4, 0.6, 0.3],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)','rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(75, 192, 192, 1)'],
+                            borderWidth: 1
+                        }]
+                    }
+                };
+            
+                const configFamiliar = {
+                    type: 'polarArea',
+                    data: {
+                        labels: ['EE.UU', 'Rusia', 'China', 'Japon', 'Alemania'],
+                        datasets: [{
+                            label: 'Puntaje familiar',
+                            data: [1.1, 0.6, 0.34, 0.8, 0.7],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)','rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(54, 162, 235, 1)'],
+                            borderWidth: 1
+                        }]
+                    }
+                };
+            
+                const configSalud = {
+                    type: 'bar',
+                    data: {
+                        labels: ['Francia', 'España', 'Inglaterra', 'Alemania', 'Rusia'],
+                        datasets: [{
+                            label: 'Puntaje Salud',
+                            data: [0.9, 1.3, 0.4, 0.6, 0.9],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)','rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(255, 99, 132, 1)'],
+                            borderWidth: 1
+                        }]
+                    }
+                };
+            
+                const configLibertad = {
+                    type: 'pie',
+                    data: {
+                        labels: ['Luanda', 'Argel', 'El cairo','Acra', 'Yuba'],
+                        datasets: [{
+                            label: 'Puntaje libertad',
+                            data: [0.3, 0.4, 0.23, 0.12, 0.42],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)','rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(153, 102, 255, 1)'],
+                            borderWidth: 1
+                        }]
+                    }
+                };
+            
+                const configCorrupcion = {
+                    type: 'line',
+                    data: {
+                        labels: ['Chile', 'Argentina', 'Peru', 'Bolivia', 'Venezuela'],
+                        datasets: [{
+                            label: 'Puntaje confianza en el gobierno',
+                            data: [0.4, 0.5, 0.3, 0.5, 0.01],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)','rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(255, 159, 64, 1)'],
+                            borderWidth: 1
+                        }]
+                    }
+                };
+            
+                const configGenerosidad = {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Dinamarca', 'Suecia', 'Noruega', 'Finlandia', 'Islandia'],
+                        datasets: [{
+                            label: 'Puntaje generosidad',
+                            data: [1.4, 1.3, 1, 0.9, 0.65, ],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)','rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(255, 206, 86, 1)'],
+                            borderWidth: 1
+                        }]
+                    }
+                };
+            
+                // Inicializar los gráficos en los espacios definidos
+                new Chart(document.getElementById('graficoEconomico'), configEconomico);
+                new Chart(document.getElementById('graficoFamiliar'), configFamiliar);
+                new Chart(document.getElementById('graficoSalud'), configSalud);
+                new Chart(document.getElementById('graficoLibertad'), configLibertad);
+                new Chart(document.getElementById('graficoCorrupcion'), configCorrupcion);
+                new Chart(document.getElementById('graficoGenerosidad'), configGenerosidad);
+            </script>
+    <footer>
+        <p>&copy;2024 Informatio</p>
+        <p>¡Síguenos!</p>
+        <div class="social-media-icons">
+            <a href="#"><img src="{% static 'images/f.png' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'images/ig.png' %}" alt="LinkedIn"></a>
+            <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="Twitter"></a>
+            <a href="#"><img src="{% static 'images/x.png' %}" alt="YouTube"></a>
+            <a href="#"><img src="{% static 'images/youtube.png' %}" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>

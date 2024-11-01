@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #FFD700;
+    padding: 10px 30px;
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%; /* Abarca todo el ancho de la página */
+    top: 0; /* Pegado en la parte superior */
+    z-index: 100; /* Colocar encima de otros elementos */
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+.menu li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+}
+
+    
+/* Estilo del menú desplegable (invisible por defecto) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+      
+/* Links dentro del menú */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+      
+/* Hover sobre los links */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+      
+/* Mostrar el menú cuando se pasa el mouse sobre el contenedor */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+      
+/* Estilo del botón o del objeto que activa el dropdown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+.user img{
+    align-items: center;
+    display: flex;
+    width: 60px;
+    margin: 0 40px;
+}
+.language {
+    align-items: center;
+    display: flex;
+    margin-right: 20px;
+    color: #000000;
+}
+
+
+/* Sidebar */
+.sidebar {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 250px;
+    height: 100vh; /* Ocupar toda la altura de la ventana */
+    position: fixed; /* Fija la sidebar en su posición */
+    top: 60px; /* Se coloca justo debajo del header */
+    left: 0; /* Pegada al lado izquierdo de la pantalla */
+    z-index: 10; /* Para asegurar que quede encima del contenido */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #3062eb;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+.content {
+    padding: 20px;
+    margin-top: 80px;
+    margin-left: 270px; /* Espacio suficiente para la sidebar */
+    background-color: #f5f5f5;
+}
+
+/* factores es el rectangulo que contiene a los bloques*/
+.factores {
+    margin-top: 20px;
+}
+.title{
+    color: #000000;
+}
+
+/*cada bloque en si*/
+.economico {
+    background-color: #e75252c5;
+    border-radius: 10px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.familiar {
+    background-color: #c47d43c5;
+    border-radius: 10px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.salud {
+    background-color: #67c255c5;
+    border-radius: 10px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.libertad {
+    background-color: #b560d6c5;
+    border-radius: 10px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.corrupcion {
+    background-color: #475fe7c5;
+    border-radius: 10px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.generosidad {
+    background-color: #dd5bbdc5;
+    border-radius: 10px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* esta configuracion es para cuando el cursor pasa por encima*/
+.economico:hover {
+    background-color: #e29593;
+}
+.familiar:hover {
+    background-color: #c09068c5;
+}
+.salud:hover {
+    background-color: #8dc283c5;
+}
+.libertad:hover {
+    background-color: #c083d8c5;
+}
+.corrupcion:hover {
+    background-color: #6f7fddc5;
+}
+.generosidad:hover {
+    background-color: #da8ec7c5;
+}
+/* son los cuadros que contienen la descripcion*/
+.economico .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.familiar .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.salud .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.libertad .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.corrupcion .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.generosidad .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+/*la forma del cuadro que parece dentro de cada cuadro*/
+.economico:focus .description {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.familiar:focus .description {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.salud:focus .description {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.libertad:focus .description {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.corrupcion:focus .description {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.generosidad:focus .description {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.factores .economico h1,
+.factores .familiar h1,
+.factores .salud h1,
+.factores .libertad h1,
+.factores .corrupcion h1,
+.factores .generosidad h1 {
+    font-size: 28px !important;  
+    color: #2C3E50 !important;
+    margin-bottom: 10px !important;
+}
+.factores .economico h2,
+.factores .familiar h2,
+.factores .salud h2,
+.factores .libertad h2,
+.factores .corrupcion h2,
+.factores .generosidad h2 {
+    font-size: 22px !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+}
+
+.graphs {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.graph {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    background-color: #DDEBFD;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-media-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+.block-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+@media (max-width: 769px) {
+    /* Cambios en el header */
+    header {
+        padding: 10px;
+    }
+
+    .menu {
+        display: none; /* Oculta el menú en dispositivos móviles */
+        flex-direction: column;
+        background-color: #042454;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 15px 20px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
+
+    .menu li a {
+        font-size: 18px;
+    }
+
+    /* Icono de menú hamburguesa */
+    .hamburger-menu {
+        display: block;
+        font-size: 24px;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Muestra el menú al hacer clic */
+    .menu.active {
+        display: block;
+    }
+
+    /* Ajustes en la sección de cuenta y lenguaje */
+    .right-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .botones-cuenta a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Cambios en el footer */
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}

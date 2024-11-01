@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacto</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css_proyect/Contacto.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="hamburger-menu">N</div>
+            <ul class="menu">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Productos</a>
+                    <!-- Menú desplegable -->
+                    <ul class="dropdown-content">
+                        <li><a href="{% url 'main' %}">JoyMetrics</a></li>
+                        <li><a href="#">SpeedGate</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'quienes' %}">Quiénes somos</a></li>
+            </ul>
+            <div class="right-section">
+                <div class="language">
+                    <span>ES</span>
+                </div>
+                <div class="botones-cuenta">
+                    <a href="{% url 'log' %}" class="boton-inicio">Inicia Sesión</a>
+                    <a href="{% url 'registro' %}" class="boton-registro">Regístrate</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="contact-text">
+            <h1>Hablemos!</h1>
+            <p>¿Tienes una gran idea o un proyecto que necesita análisis de datos experto? Contáctanos en Informátio. Nos encantaría conocer tu proyecto y brindarte los insights y el apoyo que necesitas para tener éxito.</p>
+        </div>
+        <div class="contact-form">
+            <form>
+                <label for="nombre">Nombre y Apellido</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico">
+
+                <label for="servicio">En qué servicio estás interesado?</label>
+                <select id="servicio" name="servicio">
+                    <option value="" disabled selected>Tipo de proyecto</option>
+                    <option value="analisis-datos">Análisis de datos</option>
+                    <option value="consultoria">Consultoría</option>
+                    <option value="desarrollo">Desarrollo de soluciones</option>
+                </select>
+
+                <label for="presupuesto">Presupuesto</label>
+                <select id="presupuesto" name="presupuesto">
+                    <option value="" disabled selected>Selecciona tu presupuesto</option>
+                    <option value="bajo">Menos de $5.000.000</option>
+                    <option value="medio">$5.000.000 - $20.000.000</option>
+                    <option value="alto">Más de $20.000.000</option>
+                </select>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje aquí..."></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy;2024 Informatio</p>
+        <p>¡Síguenos!</p>
+        <div class="social-media-icons">
+            <a href="#"><img src="{% static 'images/f.png' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'images/ig.png' %}" alt="LinkedIn"></a>
+            <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="Twitter"></a>
+            <a href="#"><img src="{% static 'images/x.png' %}" alt="YouTube"></a>
+            <a href="#"><img src="{% static 'images/youtube.png' %}" alt="Instagram"></a>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+

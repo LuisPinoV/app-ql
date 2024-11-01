@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css_proyect/Quienes.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">N</div>
+            <ul class="menu">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Productos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{% url 'main' %}">JoyMetrics</a></li>
+                        <li><a href="#">SpeedGate</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'quienes' %}">Quiénes somos</a></li>
+            </ul>
+            <div class="right-section">
+                <div class="language">
+                    <span>ES</span>
+                </div>
+                <div class="botones-cuenta">
+                    <a href="{% url 'log' %}" class="boton-inicio">Inicia Sesión</a>
+                    <a href="{% url 'registro' %}" class="boton-registro">Regístrate</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="mission">
+            <h2>Nuestra misión</h2>
+            <p>En Informateo, recopilamos, analizamos y visualizamos datos para que las empresas comprendan su información de manera clara y precisa. Nuestro propósito es transformar datos en conocimientos accionables, proporcionando un plan de acción estratégico que permita a nuestros clientes tomar decisiones informadas y alcanzar sus objetivos de negocio de manera efectiva.</p>
+        </section>
+
+        <section class="team">
+            <h2>Nuestro equipo</h2>
+            <div class="team-cards">
+                <div class="team-card">
+                    <div class="photo-placeholder"></div>
+                    <h3>Daniela Ávila</h3>
+                    <p>Senior Front-end Developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <div class="social-icons">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">L</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="photo-placeholder"></div>
+                    <h3>Milan Kurte</h3>
+                    <p>Senior Front-end Developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <div class="social-icons">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">L</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="photo-placeholder"></div>
+                    <h3>Luis Pino</h3>
+                    <p>Senior Front-end Developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <div class="social-icons">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">L</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="photo-placeholder"></div>
+                    <h3>Vicente Rcabado</h3>
+                    <p>Senior Front-end Developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <div class="social-icons">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">L</a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="photo-placeholder"></div>
+                    <h3>Lucas Riquelme</h3>
+                    <p>Senior Front-end Developer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <div class="social-icons">
+                        <a href="#">F</a>
+                        <a href="#">T</a>
+                        <a href="#">L</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values">
+            <h2>Nuestros valores</h2>
+            <div class="values-cards">
+                <div class="value-card">
+                    <h3>Análisis Integral</h3>
+                    <p>Te acompañamos en el proceso de análisis</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovación</h3>
+                    <p>Te acompañamos en el proceso de análisis</p>
+                </div>
+                <div class="value-card">
+                    <h3>Trabajo en equipo</h3>
+                    <p>Te acompañamos en el proceso de análisis</p>
+                </div>
+                <div class="value-card">
+                    <h3>Compromiso con el cliente</h3>
+                    <p>Te acompañamos en el proceso de análisis</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;2024 Informatio</p>
+        <p>¡Síguenos!</p>
+        <div class="social-media-icons">
+            <a href="#"><img src="{% static 'images/f.png' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'images/ig.png' %}" alt="LinkedIn"></a>
+            <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="Twitter"></a>
+            <a href="#"><img src="{% static 'images/x.png' %}" alt="YouTube"></a>
+            <a href="#"><img src="{% static 'images/youtube.png' %}" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>

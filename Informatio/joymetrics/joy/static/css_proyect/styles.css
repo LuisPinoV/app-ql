@@ -1,0 +1,331 @@
+/* el punto es cuando es una clase, cuando no lleva un punto es un "espacio"*/
+/* Cargar tipos de letra */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AloneWalker';
+    src: url('../fonts/AloneWalker.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto2';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 100%;
+}
+
+header {
+    font-family: 'Roboto2';
+    position: fixed;
+    background-color: #042454;
+    padding: 10px 30px;
+    width: 100%;
+    z-index: 100;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+
+/* los apellidos "li" y "a" son de "sub clases" o elementos */
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+    margin-right: 20px;
+    color: #fff;
+}
+
+.botones-cuenta {
+    display: flex;
+    align-items: center;
+}
+
+.boton-inicio {
+    background-color: #fff;
+    color: #042454;
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-registro {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.titulo {
+    display: grid;
+    background-color: #042454;
+    color: #fff;
+    text-align: center;
+    padding: 200px 0;
+    width: 100%;
+}
+
+
+.titulo h1 {
+    font-family: 'AloneWalker';
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.seccion-principal {
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #FFFFFF;
+}
+
+.contenedor-informacion {
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-presentacion h1 {
+    font-family: 'Roboto2';
+    font-size: 28px;
+    align-items: center;
+}
+
+.texto-presentacion2 h1 {
+    font-family: 'Roboto2';
+    font-size: 28px;
+    align-items: center;
+}
+
+.texto-presentacion h2 {
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+.texto-presentacion2 h2 {
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.botones-productos{
+    display: flesx;
+    gap: 10px;
+}
+
+.boton-compra {
+    background-color: #042454; 
+    color: #fff;
+    border: none;
+    padding: 10px 40px; /* Espaciado interior */
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 3px; 
+    transition: background-color 0.3s; 
+    height: 35px; /* Altura fija para igualar con el otro botón */
+    display: inline-flex; /* Usar flexbox para alinear texto */
+    align-items: center; /* Centrar el texto verticalmente */
+    justify-content: center; /* Centrar el texto horizontalmente */
+    margin-right: 10px;
+}
+
+.boton-saber-mas {
+    background-color: transparent; /* Sin relleno */
+    color: #042454; /* Color del texto azul */
+    border: 2px solid #042454; /* Borde azul */
+    padding: 10px 40px; /* Usar el mismo espaciado interior */
+    font-size: 16px; /* Tamaño de la fuente */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 3px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    height: 35px; /* Altura fija para igualar con el otro botón */
+    display: inline-flex; /* Usar flexbox para alinear texto */
+    align-items: center; /* Centrar el texto verticalmente */
+    justify-content: center; /* Centrar el texto horizontalmente */
+}
+
+.primary-btn {
+    background-color: #042454;
+    color: #fff;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #042454;
+    border: 2px solid #042454;
+}
+.image-content img {
+    width: 500px;
+    height: auto;
+}
+
+footer {
+    background-color: #DDEBFD;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-media-icons img {
+    width: 30px;
+    margin: 0 10px;
+    
+}
+
+/* Hover para los botones de cuenta */
+.boton-inicio:hover {
+    background-color: #042454;
+    color: white;
+}
+
+.boton-registro:hover {
+    background-color: white;
+    color: #042454
+}
+
+/* Estilo del dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Oculta el menú desplegable inicialmente */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo de los links dentro del menú desplegable */
+.dropdown-content li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambia el color de fondo al pasar el mouse sobre los links del menú */
+.dropdown-content li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Muestra el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+@media (max-width: 769px) {
+    /* Cambios en el header */
+    header {
+        padding: 10px;
+    }
+
+    .menu {
+        display: none; /* Oculta el menú en dispositivos móviles */
+        flex-direction: column;
+        background-color: #042454;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 15px 20px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
+
+    .menu li a {
+        font-size: 18px;
+    }
+
+    /* Icono de menú hamburguesa */
+    .hamburger-menu {
+        display: block;
+        font-size: 24px;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Muestra el menú al hacer clic */
+    .menu.active {
+        display: block;
+    }
+
+    /* Ajustes en la sección de cuenta y lenguaje */
+    .right-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .botones-cuenta a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Cambios en el footer */
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}

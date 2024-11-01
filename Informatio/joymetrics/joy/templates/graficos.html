@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graficos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css_proyect/graficos.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">N</div>
+            <ul class="menu">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'main' %}">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Quiénes somos</a></li>
+            </ul>
+            <div class="right-section">
+                <div class="language">
+                    <span>ES</span>
+                </div>
+                <div class="auth-buttons">
+                    <a href="{% url 'log' %}" class="login-btn">Inicia Sesión</a>
+                    <a href="{% url 'registro' %}" class="register-btn">Regístrate</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="column">
+            <div class="info-container">
+                <h5 class="block-title">Promedio Felicidad</h5>
+                <p class="large-number">7.5</p>
+            </div>
+            <div class="info-container">
+                <h5 class="block-title">Año</h5>
+                <p>2019</p>
+            </div>
+            <div class="info-container">
+                <h5 class="block-title">País con menor puntaje</h5>
+                <p>Afganistán</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grafico-container">
+                <canvas id="graficoFactores" width="400" height="400"></canvas>
+                <div class="text-container">
+                    <h5 class="block-title">Países más felices</h5>
+                    <p>Estos son los 5 países que encabezaron el ranking de felicidad mundial en el año 2019</p>
+                </div>
+            </div>
+    
+            <div class="grafico-container">
+                <canvas id="graficoPaises" width="600" height="600"></canvas>
+                <div class="text-container">
+                    <h5 class="block-title">Factores de la Felicidad</h5>
+                    <p>Según el World Happiness report, estos 6 factores son los que más influyen en la felicidad de las personas</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="column">
+            <div class="info-container">
+                <h5 class="block-title">País más feliz</h5>
+                <p>Finlandia</p>
+            </div>
+            <div class="info-container">
+                <h5 class="block-title">Puntaje</h5>
+                <p class="large-number">7.769</p>
+            </div>
+            <div class="info-container">
+                <h5 class="block-title">Año</h5>
+                <p>2019</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;2024 Informatio</p>
+        <p>¡Síguenos!</p>
+        <div class="social-media-icons">
+            <a href="#"><img src="{% static 'images/f.png' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn"></a>
+            <a href="#"><img src="{% static 'images/x.png' %}" alt="Twitter"></a>
+            <a href="#"><img src="{% static 'images/youtube.png' %}" alt="YouTube"></a>
+            <a href="#"><img src="{% static 'images/ig.png' %}" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        const ctxFactores = document.getElementById('graficoFactores').getContext('2d');
+        const graficoFactores = new Chart(ctxFactores, {
+            type: 'bar',
+            data: {
+                labels: ['Economía', 'Apoyo Social', 'Salud', 'Libertad', 'Generosidad', 'Percepción de Corrupción'],
+                datasets: [{
+                    label: 'Impacto en la Felicidad',
+                    data: [7, 8, 9, 6, 5, 4],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctxPaises = document.getElementById('graficoPaises').getContext('2d');
+        const graficoPaises = new Chart(ctxPaises, {
+            type: 'pie',
+            data: {
+                labels: ['Finlandia', 'Dinamarca', 'Suiza', 'Islandia', 'Países Bajos'],
+                datasets: [{
+                    label: 'Ranking de Felicidad',
+                    data: [7.769, 7.600, 7.557, 7.494, 7.488],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Países más felices en 2019'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

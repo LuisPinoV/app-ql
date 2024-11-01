@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #0b326e;
+    padding: 10px 30px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+    margin-right: 20px;
+    color: #fff;
+}
+.botones-cuenta {
+    display: flex;
+    align-items: center;
+}
+.boton-registro {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.login-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.login-btn {
+    padding: 15px;
+    background-color: #00214d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.divider {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #000000;
+}
+
+.divider span {
+    position: relative;
+    background-color: white;
+    padding: 0 10px;
+}
+
+.social-login button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.google-btn {
+    background-color: #4285f4;
+    color: white;
+}
+
+.facebook-btn {
+    background-color: #3b5998;
+    color: white;
+}
+
+.email-btn {
+    background-color: #555;
+    color: white;
+}
+
+.problems {
+    margin-top: 20px;
+}
+
+.problems a {
+    color: #333;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #DDEBFD;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-media-icons img {
+    width: 30px;
+    margin: 0 10px;
+    
+}
+.boton-registro:hover {
+    background-color: white;
+    color: #042454
+}
+/* Estilo del dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Oculta el menú desplegable inicialmente */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo de los links dentro del menú desplegable */
+.dropdown-content li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Cambia el color de fondo al pasar el mouse sobre los links del menú */
+.dropdown-content li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Muestra el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+@media (max-width: 768px) {
+    /* Cambios en el header */
+    header {
+        padding: 10px;
+    }
+
+    .menu {
+        display: none; /* Oculta el menú en dispositivos móviles */
+        flex-direction: column;
+        background-color: #042454;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 15px 20px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
+
+    .menu li a {
+        font-size: 18px;
+    }
+
+    /* Icono de menú hamburguesa */
+    .hamburger-menu {
+        display: block;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Muestra el menú al hacer clic */
+    .menu.active {
+        display: block;
+    }
+
+    /* Ajustes en la sección de cuenta y lenguaje */
+    .right-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .botones-cuenta a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Cambios en el footer */
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
